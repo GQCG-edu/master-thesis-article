@@ -1,0 +1,117 @@
+\documentclass[twoside,onecolumn,12pt]{article}
+\usepackage[english]{babel} % babel system, adjust the language of the content
+\usepackage[a4paper, top=1.9cm, bottom=1.9cm, left=3.17cm, right=3.17cm]{geometry}
+\usepackage{algorithm}              % http://ctan.org/pkg/algorithms
+\usepackage{algpseudocode}          % http://ctan.org/pkg/algorithmicx
+\usepackage{amsmath}
+\usepackage{amsfonts}             % mathfrak
+\usepackage{amssymb}  
+\usepackage{bm}            % \mathbb
+\usepackage[mathscr]{euscript}    % \mathscr
+\usepackage{chemmacros}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{interval}
+\usepackage{mathtools}            % dcases, DeclareMathOperator, DeclairePairedDelimiter
+\usepackage{physics}               % physics typesetting, especially bra-ket notation
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{pdfpages}
+\usepackage[version=3]{mhchem}
+\usepackage{enumitem}
+\usepackage{ulem}
+\usepackage{simpler-wick}
+\usepackage{caption}
+\usepackage{tabularx}
+\usepackage[backend=biber, style=chem-acs, biblabel=dot, natbib=true, articletitle=true]{biblatex}
+\addbibresource{article.bib}
+\graphicspath{{img/}}
+
+% install Times New Roman font
+\usepackage{fontspec}
+\setmainfont[Path = ./fonts/,
+BoldFont = TNR-bold.ttf,
+ItalicFont = TNR-italic.ttf,
+BoldItalicFont  = TNR-bold-italic.ttf]{TNR.ttf}
+
+% Format section titles
+\usepackage[explicit, indentafter]{titlesec}
+\titleformat{\section}{\normalfont\normalsize\filcenter}{}{0em}{\textbf{#1}}
+\titleformat{\subsection}{\normalfont\normalsize}{}{0em}{\uline{#1}}
+\titleformat{\subsubsection}[runin]{\normalfont\normalsize}{}{1em}{\uline{#1}}
+
+% Paragraph indentation and linespread
+\setlength{\parindent}{1em}
+\linespread{1.0}
+
+% Format equation labels
+\newtagform{brackets}{[}{]}
+\usetagform{brackets}
+
+% Format tables
+\captionsetup[table]{singlelinecheck=off, labelfont=bf, font=footnotesize}
+\renewcommand{\thetable}{\Roman{table}}
+\AtBeginEnvironment{tabularx}{\footnotesize}
+
+\begin{document}
+\begin{center}
+\textbf{The Title of Your Paper Goes Here, with Each Initial Letter Capitalized}
+\end{center}%Article title
+\begin{center}
+A. B. Smith\textit{$^{a}$}, H. B. Hill\textit{$^{b}$}, R. D. Meadow\textit{$^{c}$}, J. B. Doe\textit{$^{a}$}, X.-Y. Xu\textit{$^{b}$}, and T. R. Price\textit{$^{a}$} %authors
+\end{center}
+\begin{center}
+\textit{$^{a}$}Department of Chemistry, Princeton University, Princeton, New Jersey 08540, USA \newline
+\textit{$^{b}$}Department of Physics, Rutgers University, New Brunswick, New Jersey 08901, USA \newline
+\textit{$^{c}$}Department of Biochemistry, Northern Illinois University, DeKalb, Illinois 60115, USA
+\end{center}
+
+\begin{center}
+\parbox{11.5cm}{The manuscript should begin with a short abstract (not more than 150 words), typed single-spaced, four and a half inches wide (~11.5 cm), and centered. The abstract should be on the first page of the text, following the paper title, and authors’ names and affiliations. Do not type it on a separate sheet.}
+\end{center}
+
+\section{Test First Level Heading} %First paragraph is not indented
+\noindent Begin your paper here. This paragraph represents the standard font and layout for individual paragraphs. All references within the text should be numbered consecutively with the numbers in parentheses as shown at the end of this sentence \autocite{hartree1928}. To use this template, replace the text in this template with your text. Up in the “Styles and Formatting” menu, usually found at the top left section of the MS Word toolbar, you will see that what you type will automatically be formatted. If you are creating new sections to your paper, you can use that pull-down menu to select the proper formatting style for the section you are typing. 
+
+\subsection{Test Second Level Heading}
+This paragraph represents the standard font and layout for individual paragraphs. All references within the text should be numbered consecutively with the numbers in parentheses as shown at the end of this sentence (3). To use this template, replace the text in this template with your text. Up in the “Styles and Formatting” menu, usually found at the top left section of the MS Word toolbar, you will see that what you type will automatically be formatted. If you are creating new sections to your paper, you can use that pull-down menu to select the proper formatting style for the section you are typing.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[scale=0.5]{example-image}
+    \caption{This is the Style for figure captions. Center this text if it doesn't run for more than one line.}
+\end{figure}
+
+\subsubsection{Test Third Level Heading}
+This paragraph represents the standard font and layout for individual paragraphs. All references within the text should be numbered consecutively with the numbers in parentheses as shown at the end of this sentence (3). To use this template, replace the text in this template with your text. Up in the “Styles and Formatting” menu, usually found at the top left section of the MS Word toolbar, you will see that what you type will automatically be formatted. If you are creating new sections to your paper, you can use that pull-down menu to select the proper formatting style for the section you are typing.
+
+All equations must be typed, centered and separated from the text by two lines of space aboce and below the equation. They should be numbered consecutively throughout the paper, with the numbers appearing in square brackets at the right margin, in line with the last line of the equation (example shown below for simple \eqref{simple} and more advanced \eqref{difficult} equations).
+
+\begin{equation}
+    A+B - (c+d) = xy*z+(2q+3) \label{simple}
+\end{equation}
+\begin{equation}
+    \wick{\c1 a_P^\dagger \c2 a_Q^\dagger \c1 a_R \c2 a_S} = -\gamma_{PR}\gamma_{QS} \label{difficult}
+\end{equation}
+
+All tables must fit within the space allowed for text. All tables must be numbered consecutively with Roman numerals, identified by a title and cited (in order) within the text. The title should be typed above the table and aligned on the left side of the page.
+
+\begin{table}[H]
+    \caption{Type Table Name Here}
+    \begin{tabularx}{\columnwidth}{l|X|X}
+        \hline
+        \textbf{Column Header Goes Here} & \textbf{Column Header Goes Here} & \textbf{Column Header Goes Here}\\
+        \hline
+        Row Name Goes Here & X & X\\
+        Row Name Goes Here & X & X\\
+        Row Name Goes Here & X & X\\
+        \hline
+    \end{tabularx}
+\end{table}
+
+\section{Acknowledgments}
+Place acknowledgments at the end of the text, before the references.
+
+\printbibliography
+\end{document}
