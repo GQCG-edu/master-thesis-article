@@ -1,0 +1,33 @@
+name: Build and archive article
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set up Git repository
+      uses: actions/checkout@v2
+    - name: Compile LaTeX document
+      uses: gqcg-oss/latex-action@master
+      with:
+        root_file: article.tex
+        working_directory: .
+        latexmk_use_xelatex: true
+    - name: Archive article for master
+      uses: actions/upload-artifact@v2
+      with:
+        name: article.pdf
+        path: ./article.pdf
+      if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+    - name: Archive article for PR
+      uses: actions/upload-artifact@v2
+      with:
+        name: article.pdf
+        path: ./article.pdf
+        retention-days: 5
+      if: ${{ github.event_name == 'pull_request'}}
