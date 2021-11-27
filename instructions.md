@@ -10,7 +10,7 @@
 <img src="media/overleaf_project_RO_annotated.png" width="400">
 </p>
 
-- The overleaf menu opens at the left of the screen. Next, click on *copy project* under the tab *Actions* to copy the template to an editable project.
+- The Overleaf menu opens at the left of the screen. Next, click on *copy project* under the tab *Actions* to copy the template to an editable project.
 
 <p align="center">
 <img src="media/overleaf_project_menu.png" width="400">
