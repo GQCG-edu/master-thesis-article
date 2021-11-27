@@ -1,4 +1,4 @@
-- Click on the Overleaf link on the [home GitHub page](README.md). An Overleaf project will open with the article template as shown below. Note that this is a read-only project and you cannot yet make changes.
+- Click on the Overleaf link on the [home GitHub page](README.md). An Overleaf project will open with the article template, as shown below. Note that this is a read-only project and you cannot yet make changes.
 
 <p align="center">
 <img src="media/overleaf_project_RO.png" width="400">
