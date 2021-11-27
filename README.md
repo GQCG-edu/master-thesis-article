@@ -2,6 +2,8 @@
 <img src="media/writing.png" width="400">
 </p>
 
+This article template can be used in Overleaf using the link below. We have also added [instructions](instructions.md) on how to use this template in overleaf.
+
 [![Overleaf template](https://img.shields.io/badge/Overleaf-47A141?style=for-the-badge&logo=Overleaf&logoColor=white)](https://www.overleaf.com/read/wshjrvffsdcz
 )
 
