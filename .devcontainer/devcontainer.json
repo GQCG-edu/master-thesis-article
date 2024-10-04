@@ -1,7 +1,7 @@
 {
 	"name": "Dockerhub GQCG LaTeX container",
 
-	"image": "gqcg/latex:latest",
+	"image": "ghcr.io/gqcg-oss/latex-docker/latex-docker:master",
 
 	// Sets the run context to one level up instead of the .devcontainer folder.
 	"context": "..",
